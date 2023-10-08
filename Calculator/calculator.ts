@@ -23,15 +23,14 @@ import { div } from "./calculator_div.js";
     }
   }
   let operation = values.pop(); // The last value is the operation
-  console.log(values);
   if (operation === "+") {
-    console.log(chalk.green("Result:") , chalk.bold(add(values.map(Number))));
+    console.log(chalk.green.bgMagentaBright("\nResult:") , chalk.yellow.bold.bgBlue(add(values.map(Number))));
   } else if (operation === "-") {
-    console.log(chalk.green("Result:"), chalk.bold(sub(values.map(Number))));
+    console.log(chalk.green.bgMagentaBright("\nResult:"), chalk.yellow.bold.bgBlue(sub(values.map(Number))));
   } else if (operation === "*") {
-    console.log(chalk.green("Result:"), chalk.bold(mul(values.map(Number))));
+    console.log(chalk.green.bgMagentaBright("\nResult:"), chalk.yellow.bold.bgBlue(mul(values.map(Number))));
   } else if (operation === "/") {
-    console.log(chalk.green("Result:"), chalk.bold(div(values.map(Number))));
+    console.log(chalk.green.bgMagentaBright("\nResult:"), chalk.yellow.bold.bgBlue(div(values.map(Number))));
   } else {
     console.log(chalk.red("Invalid operation"));
   }
