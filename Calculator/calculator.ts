@@ -1,4 +1,3 @@
-
 import chalk from "chalk";
 import showBanner from 'node-banner';
 import inquirer from "inquirer";
