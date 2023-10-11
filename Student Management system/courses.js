@@ -35,14 +35,3 @@ export const courses = [{
             "Quarter 4": "Voice Computing for Device Control"
         }
     }];
-// Create an array with only "Id" and "Available Programs" properties
-const simplifiedCourses = courses.map(course => ({
-    Id: course.Id,
-    "Available Programs": course["Available Programs"]
-}));
-// Display the simplified array in table form
-console.table(simplifiedCourses);
-// courses.forEach((course) => {
-//     console.log(`Course: ${course["Available Programs"]}`);
-//     console.table(course["Program Structure"]);
-//   });
