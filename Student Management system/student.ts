@@ -29,20 +29,9 @@ let student = await inquirer.prompt([{
 },{
     name: "student Id",
     type: "string",
-    // message: "Selected Course",
+    message: "Selected Course",
     default: Math.floor(10000*Math.random()),
 }
 ])
-// student.selectedCourse = selectedCourse;
-// student = { ...student, selectedCourse };
-// students.push(student)
 return student;
 }
-// console.log(students[0]);
-// console.log(student1[0])
-    // Fullname:  promptSync("Enter your Full Name.. "), 
-    // Gender: promptSync("Enter your Gender.. "),
-    // "Student ID": 10000*Math.random(),
-    // "Phone number": promptSync("Enter your Birth Day.. "),
-
-// console.log(student1);

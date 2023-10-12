@@ -1,6 +1,10 @@
 import inquirer from "inquirer"
 import { courses } from "./courses.js"
 import { student } from "./student.js"
+import showBanner from "node-banner";
+(async () => {
+    await showBanner('LMS', 'Welcome to Learning Management System of PIAIC');
+
 let students : any[] = [{
     Fullname: "Alla Ud Din Ali Ahmad",
     Gender: "Male",
@@ -45,7 +49,7 @@ if (mainMenu.selectMenu === "New Registration"){
         console.table(courses[3]["Program Structure"]);
     }
     students.push(await student(selectedCourse.selectCourses))
-    console.log(students)
+    console.log("Thanks for joining! You're officially in")
     callback();
 }
 else if (mainMenu.selectMenu === "Already a student"){
@@ -100,10 +104,13 @@ else if (mainMenu.selectMenu === "Already a student"){
     }
 }
 else if (mainMenu.selectMenu === "Exit"){
-    console.log("Thank you for visiting us")
+    (async () => {
+        await showBanner('Good Bye', '\tThank you for visiting us');
+    })();
 }
 }
 main();
 async function callback(){
     main()
 }
+})();

@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^9.2.11",
+    "node-banner": "^1.4.0",
     "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
