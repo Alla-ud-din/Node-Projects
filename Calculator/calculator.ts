@@ -7,6 +7,7 @@ import { mul } from "./calculator_mul.js";
 import { div } from "./calculator_div.js";
 (async () => {
     await showBanner('Calculator', 'Only type number or operations');
+async function main(){
   let values = [];
   for (let i = 0; i < 50; i++) {
     let response = await inquirer.prompt({
@@ -34,4 +35,10 @@ import { div } from "./calculator_div.js";
   } else {
     console.log(chalk.red("Invalid operation"));
   }
+  callback();
+}
+main()
+function callback(){
+  main();
+}
 })();
