@@ -96,7 +96,8 @@ else if (mainMenu.selectMenu === "Already a student"){
                     message: `Enter a new value for ${propertyToEdit.editProperty}`,
                   }); 
                   students[i][propertyToEdit.editProperty] = newValue.newPropertyValue;
-                  console.log(students[i]);
+                //   console.log(students[i]);
+                console.log("Information updated")
                   break;
             }
         }

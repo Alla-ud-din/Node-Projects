@@ -95,7 +95,8 @@ import showBanner from "node-banner";
                             message: `Enter a new value for ${propertyToEdit.editProperty}`,
                         });
                         students[i][propertyToEdit.editProperty] = newValue.newPropertyValue;
-                        console.log(students[i]);
+                        //   console.log(students[i]);
+                        console.log("Information updated");
                         break;
                     }
                 }
