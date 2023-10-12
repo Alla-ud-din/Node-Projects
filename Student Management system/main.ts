@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import inquirer from "inquirer"
 import { courses } from "./courses.js"
 import { student } from "./student.js"

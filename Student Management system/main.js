@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import inquirer from "inquirer";
 import { courses } from "./courses.js";
 import { student } from "./student.js";
@@ -9,13 +10,13 @@ import showBanner from "node-banner";
             Gender: "Male",
             "Phone number": +923335736624,
             selectedCourse: "Artificial intelligence",
-            "student Id": 123,
+            "student Id": 100000 * Math.random(),
         }, {
             Fullname: "Nasir Mehmood",
             Gender: "Male",
             "Phone number": +923345008680,
             selectedCourse: "Blockchain",
-            "student Id": 456,
+            "student Id": 100000 * Math.random(),
         }];
     async function main() {
         let mainMenu = await inquirer.prompt({
