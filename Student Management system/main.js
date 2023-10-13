@@ -10,13 +10,13 @@ import showBanner from "node-banner";
             Gender: "Male",
             "Phone number": +923335736624,
             selectedCourse: "Artificial intelligence",
-            "student Id": 100000 * Math.random(),
+            "student Id": Math.floor(100000 * Math.random()),
         }, {
             Fullname: "Nasir Mehmood",
             Gender: "Male",
             "Phone number": +923345008680,
             selectedCourse: "Blockchain",
-            "student Id": 100000 * Math.random(),
+            "student Id": Math.floor(100000 * Math.random()),
         }];
     async function main() {
         let mainMenu = await inquirer.prompt({
@@ -89,15 +89,29 @@ import showBanner from "node-banner";
                             message: "Select a property to edit",
                             choices: Object.keys(students[i]),
                         });
-                        console.log(propertyToEdit.editProperty);
-                        const newValue = await inquirer.prompt({
-                            name: "newPropertyValue",
-                            type: "input",
-                            message: `Enter a new value for ${propertyToEdit.editProperty}`,
-                        });
-                        students[i][propertyToEdit.editProperty] = newValue.newPropertyValue;
+                        if (propertyToEdit.editProperty === "selectedCourse") {
+                            let newValue = await inquirer.prompt({
+                                name: "newPropertyValue",
+                                type: "list",
+                                message: `Select a new value for ${propertyToEdit.editProperty}`,
+                                choices: ["Artificial intelligence", "Cloud Native and Mobile Web Computing", "Blockchain", "Internet of Things"]
+                            });
+                            students[i][propertyToEdit.editProperty] = newValue.newPropertyValue;
+                            console.log("Information updated");
+                        }
+                        else if (propertyToEdit.editProperty === "student Id") {
+                            console.log("Sorry you can't edit Student Id");
+                        }
+                        else if (propertyToEdit.editProperty !== "selectedCourse" && propertyToEdit.editProperty !== "student Id") {
+                            const newValue = await inquirer.prompt({
+                                name: "newPropertyValue",
+                                type: "input",
+                                message: `Enter a new value for ${propertyToEdit.editProperty}`,
+                            });
+                            students[i][propertyToEdit.editProperty] = newValue.newPropertyValue;
+                            console.log("Information updated");
+                        }
                         //   console.log(students[i]);
-                        console.log("Information updated");
                         break;
                     }
                 }
