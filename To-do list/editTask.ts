@@ -1,6 +1,6 @@
 import inquirer from "inquirer";
-import { callback } from "./main.js"
 import { list } from "./createTodoItem.js";
+import chalk from "chalk";
 export async function edittask(){
 let editTask = await inquirer.prompt({
     name: "selectTask",
@@ -19,7 +19,7 @@ for (let i = 0; i<list.length; i++){
           choices: Object.keys(list[i]),
         });
         if (propertyToEdit.editProperty === "id"){
-        console.log("Sorry you can't change id")
+        console.log(chalk.red("Sorry you can't change id"))
         }
         else if (propertyToEdit.editProperty === "isCompleted"){
           const newValue = await inquirer.prompt({
@@ -44,8 +44,12 @@ for (let i = 0; i<list.length; i++){
         more = morechanges.changes;
       }while(more)
         console.log(list[i]);
-            // console.log(chalk.green("Information updated"))
       } 
   } 
-    callback();    
+  let completeList = await inquirer.prompt({
+    name: "completeList",
+    type: "confirm",
+    message: "Want to see complete list"
+})
+if (completeList.completeList){console.table(list);}  
 }

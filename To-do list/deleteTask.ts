@@ -1,5 +1,4 @@
 import inquirer from "inquirer";
-import { callback } from "./main.js";
 import { list } from "./createTodoItem.js";
 export async function deleteTask(){
 let deleteTask = await inquirer.prompt({
@@ -14,8 +13,11 @@ for (let i = 0; i<list.length; i++){
         list.splice(i,1);
     }
 }
-// Perform actions for deleting tasks
-console.log("list after deleting", list);
-callback();
-// console.log('Selected option: Deleting tasks');
+// console.log("list after deleting", list);
+let completeList = await inquirer.prompt({
+    name: "completeList",
+    type: "confirm",
+    message: "Want to see complete list"
+})
+if (completeList.completeList){console.table(list);}
 }

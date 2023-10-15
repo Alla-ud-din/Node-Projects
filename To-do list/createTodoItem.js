@@ -1,32 +1,31 @@
 import inquirer from "inquirer";
-import { callback } from "./main.js";
+import chalk from "chalk";
 export const list = [{
         id: 1,
-        title: "abc",
-        description: "aaaaaaaaaaaaaaabbbbbbbbcccccccccc",
-        dueDate: new Date(),
+        title: "Excercise",
+        description: "Morning workout for atleast 30 minutes",
+        dueDate: "2023-10-16",
         isCompleted: false,
     }, {
         id: 2,
-        title: "def",
-        description: "ddddddddddeeeeeeeeefffffffffff",
-        dueDate: new Date(),
-        isCompleted: true
+        title: "Read the newspaper",
+        description: "Read the newspaper espacially Editor Choice and opinions",
+        dueDate: "2023-10-16",
+        isCompleted: false
     }];
 export async function addtask() {
     const todoItem = await createTodoItem();
     list.push(todoItem);
-    console.log('New Todo Item:');
-    console.log(todoItem);
+    console.log(chalk.green('New Todo Item:'));
+    console.table(todoItem);
     let completeList = await inquirer.prompt({
         name: "completeList",
         type: "confirm",
         message: "Want to see complete list"
     });
     if (completeList.completeList) {
-        console.log(list);
+        console.table(list);
     }
-    callback();
 }
 let counter = 2;
 export async function createTodoItem() {
