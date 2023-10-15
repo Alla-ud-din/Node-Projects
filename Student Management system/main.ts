@@ -110,10 +110,7 @@ else if (mainMenu.selectMenu === "Already a student"){
                       }); 
                     students[i][propertyToEdit.editProperty] = newValue.newPropertyValue;
                     console.log(chalk.green("Information updated"))
-                  }
-
-                //   console.log(students[i]);
-                
+                  }        
                   break;
             }
         }

@@ -110,7 +110,6 @@ import chalk from 'chalk';
                             students[i][propertyToEdit.editProperty] = newValue.newPropertyValue;
                             console.log(chalk.green("Information updated"));
                         }
-                        //   console.log(students[i]);
                         break;
                     }
                 }
