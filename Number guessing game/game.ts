@@ -2,7 +2,7 @@
 import chalk from 'chalk';
 import showBanner from 'node-banner';
 import inquirer from "inquirer";
-import { getEnvironmentData } from 'worker_threads';
+// import { getEnvironmentData } from 'worker_threads';
 (async () => {
     await showBanner('Welcome ! ', '\tThis is a Number Guessing Game');
 let numberByComputer = Math.floor(10*Math.random());
