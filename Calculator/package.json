@@ -17,7 +17,9 @@
   },
   "dependencies": {
     "chalk": "^5.3.0",
+    "g": "^2.0.1",
     "inquirer": "^9.2.11",
-    "node-banner": "^1.4.0"
+    "node-banner": "^1.4.0",
+    "simple-command-line-calculator-00": "^1.0.3"
   }
 }
