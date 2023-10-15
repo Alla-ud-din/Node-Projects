@@ -1,5 +1,5 @@
 import inquirer from "inquirer";
-let counter = 0;
+let counter = 2;
 export async function createTodoItem() {
     const answers = await inquirer.prompt([
         {
