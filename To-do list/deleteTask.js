@@ -1,5 +1,6 @@
 import inquirer from "inquirer";
-import { list } from "./main.js";
+import { callback } from "./main.js";
+import { list } from "./createTodoItem.js";
 export async function deleteTask() {
     let deleteTask = await inquirer.prompt({
         name: "selectTask",
@@ -15,5 +16,6 @@ export async function deleteTask() {
     }
     // Perform actions for deleting tasks
     console.log("list after deleting", list);
+    callback();
     // console.log('Selected option: Deleting tasks');
 }

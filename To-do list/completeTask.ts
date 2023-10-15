@@ -1,5 +1,6 @@
 import inquirer from "inquirer";
-import { list } from "./main.js";
+import { callback } from "./main.js";
+import { list } from "./createTodoItem.js";
 export async function completeTask(){
 let markTask = await inquirer.prompt({
     name: "selectTask",
@@ -13,6 +14,7 @@ for (let i = 0; i<list.length; i++){
     }
 }
 console.log(list);
+callback();
 // Perform actions for marking tasks as complete
-console.log('Selected option: Marking tasks as complete');
+// console.log('Selected option: Marking tasks as complete');
 }

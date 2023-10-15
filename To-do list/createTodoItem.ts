@@ -1,10 +1,37 @@
 import inquirer from "inquirer"
+import { callback } from "./main.js";
 export interface todo_item {
     id: number;
     title: string;
     description: string;
     dueDate: Date;
     isCompleted: boolean;
+}
+export const list: any[]=[{
+    id: 1,
+    title: "abc",
+    description: "aaaaaaaaaaaaaaabbbbbbbbcccccccccc",
+    dueDate: new Date(),
+    isCompleted: false,
+},{
+    id: 2,
+    title: "def",
+    description: "ddddddddddeeeeeeeeefffffffffff",
+    dueDate: new Date(),
+    isCompleted: true
+}]
+export async function addtask() {
+    const todoItem = await createTodoItem();
+    list.push(todoItem);
+    console.log('New Todo Item:');
+    console.log(todoItem);
+    let completeList = await inquirer.prompt({
+        name: "completeList",
+        type: "confirm",
+        message: "Want to see complete list"
+    })
+    if (completeList.completeList){console.log(list);}
+    callback();
 }
 let counter = 2;
 export async function createTodoItem() {
