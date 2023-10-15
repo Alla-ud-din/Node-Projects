@@ -9,12 +9,13 @@ import { div } from "./calculator_div.js";
 (async () => {
     await showBanner('Calculator', 'Only type number or operations');
     async function main() {
+        console.log(chalk.cyan("Enter operation at the end"));
         let values = [];
         for (let i = 0; i < 50; i++) {
             let response = await inquirer.prompt({
                 name: `Values${i}`,
                 type: "input",
-                message: "Enter value or operation:"
+                message: "Enter value or operation"
             });
             let value = response[`Values${i}`];
             // console.log(typeof value);

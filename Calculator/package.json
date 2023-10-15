@@ -1,6 +1,6 @@
 {
-  "name": "simple-command-line-calculator-00",
-  "version": "1.0.3",
+  "name": "simple-command-line-calculator00",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "type": "module",
