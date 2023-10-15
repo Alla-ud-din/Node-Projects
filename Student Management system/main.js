@@ -97,8 +97,6 @@ import chalk from 'chalk';
                                 message: `Select a new value for ${propertyToEdit.editProperty}`,
                                 choices: ["Artificial intelligence", "Cloud Native and Mobile Web Computing", "Blockchain", "Internet of Things"]
                             });
-                            // students[i][propertyToEdit.editProperty] = newValue.newPropertyValue;
-                            // console.log(chalk.red("Information updated"))
                         }
                         else if (propertyToEdit.editProperty === "student Id") {
                             console.log("Sorry you can't edit Student Id");
