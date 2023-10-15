@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-import inquirer from "inquirer"
-import { courses } from "./courses.js"
-import { student } from "./student.js"
+import inquirer from "inquirer";
+import { courses } from "./courses.js";
+import { student } from "./student.js";
 import showBanner from "node-banner";
+import chalk from 'chalk';
 (async () => {
     await showBanner('LMS', 'Welcome to Learning Management System of PIAIC');
 
@@ -34,23 +35,23 @@ if (mainMenu.selectMenu === "New Registration"){
         choices: ["Artificial intelligence" , "Cloud Native and Mobile Web Computing" , "Blockchain" , "Internet of Things"]
     })
     if (selectedCourse.selectCourses === "Artificial intelligence"){
-        console.log(`Course: ${courses[0]["Available Programs"]}`);
+        console.log(chalk.bgGreen.bold.gray(`\t\tCourse: ${courses[0]["Available Programs"]}`));
         console.table(courses[0]["Program Structure"]);
     }
     else if (selectedCourse.selectCourses === "Cloud Native and Mobile Web Computing"){
-        console.log(`Course: ${courses[1]["Available Programs"]}`);
+        console.log(chalk.bgGreen.bold.gray(`\tCourse: ${courses[1]["Available Programs"]}`));
         console.table(courses[1]["Program Structure"]);
     }
     else if (selectedCourse.selectCourses === "Blockchain"){
-        console.log(`Course: ${courses[2]["Available Programs"]}`);
+        console.log(chalk.bgGreen.bold.gray(`\t\tCourse: ${courses[2]["Available Programs"]}`));
         console.table(courses[2]["Program Structure"]);
     }
     else if (selectedCourse.selectCourses === "Internet of Things"){
-        console.log(`Course: ${courses[3]["Available Programs"]}`);
+        console.log(chalk.bgGreen.bold.gray(`\t\tCourse: ${courses[3]["Available Programs"]}`));
         console.table(courses[3]["Program Structure"]);
     }
     students.push(await student(selectedCourse.selectCourses))
-    console.log("Thanks for joining! You're officially in")
+    console.log(chalk.yellow("\t\tThanks for joining! You're officially in"));
     callback();
 }
 else if (mainMenu.selectMenu === "Already a student"){
@@ -97,8 +98,8 @@ else if (mainMenu.selectMenu === "Already a student"){
                     message: `Select a new value for ${propertyToEdit.editProperty}`,
                     choices: ["Artificial intelligence" , "Cloud Native and Mobile Web Computing" , "Blockchain" , "Internet of Things"]
                 })
-                students[i][propertyToEdit.editProperty] = newValue.newPropertyValue;
-                console.log("Information updated")
+                // students[i][propertyToEdit.editProperty] = newValue.newPropertyValue;
+                // console.log(chalk.red("Information updated"))
                   }
                   else if (propertyToEdit.editProperty === "student Id"){
                     console.log("Sorry you can't edit Student Id")
@@ -110,7 +111,7 @@ else if (mainMenu.selectMenu === "Already a student"){
                         message: `Enter a new value for ${propertyToEdit.editProperty}`,
                       }); 
                     students[i][propertyToEdit.editProperty] = newValue.newPropertyValue;
-                    console.log("Information updated")
+                    console.log(chalk.green("Information updated"))
                   }
 
                 //   console.log(students[i]);
